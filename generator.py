@@ -4,8 +4,8 @@ llm = Llama(model_path="models/llama-2-7b-chat.Q4_K_M.gguf", n_threads=24, n_ctx
 
 
 def generate(context, question):
-    prompt = f"""
-You are a helpful assistant.
+    prompt = f"""You are a helpful assistant.
+Use ONLY the context below to answer the question. If the context is insufficient, say "I don't know".
 
 Context:
 {context}
@@ -13,8 +13,7 @@ Context:
 Question:
 {question}
 
-Answer using only the context above.
+Answer:
 """
-    output = llm(prompt, max_tokens=300)
-
-    return output["choices"][0]["text"]
+    output = llm(prompt, max_tokens=300, stop=["\n\n"])
+    return output["choices"][0]["text"].strip()

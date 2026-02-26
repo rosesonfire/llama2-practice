@@ -1,0 +1,32 @@
+[project]
+name = "llama2-practice"
+version = "0.1.0"
+description = "A Retrieval-Augmented Generation (RAG) system powered by LLaMA 2"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "fastapi (>=0.133.1,<0.134.0)",
+    "uvicorn (>=0.41.0,<0.42.0)",
+    "llama-cpp-python (>=0.3.16,<0.4.0)",
+    "sentence-transformers (>=5.2.3,<6.0.0)",
+    "faiss-cpu (>=1.13.2,<2.0.0)",
+    "numpy (<2.2)",
+    "transformers (>=5.2.0,<6.0.0)",
+    "pydantic (>=2.12.5,<3.0.0)"
+    
+]
+
+[[project.authors]]
+name = "rosesonfire"
+email = "ishti.ik@gmail.com"
+
+[[project.maintainers]]
+name = "rosesonfire"
+email = "ishti.ik@gmail.com"
+
+[tool.poetry]
+packages = []
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
