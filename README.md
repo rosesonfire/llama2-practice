@@ -37,6 +37,8 @@ The system supports both API ([FastAPI](#fastapi)) and CLI interfaces for easy i
 
 ![Pipeline Architecture](assets/flow.png)
 
+![Demo](assets/demo.gif)
+
 ## Project Structure
 
 ```
