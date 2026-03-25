@@ -14,11 +14,11 @@ async def home():
 async def chat(request: Request):
     data = await request.json()
     query = data.get("query", "")
-    docs = retrieve(query)
+    docs = retrieve(query, k=5)
 
     if not docs:
         return {"answer": "I don't know."}
 
-    context = "\n".join(docs)
+    context = "\n".join(set(docs))
     answer = generate(context, query)
     return {"answer": answer}
